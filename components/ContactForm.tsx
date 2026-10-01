@@ -106,9 +106,12 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="flex flex-col items-center gap-4 rounded-sm border border-accent/30 bg-accent/5 p-10 text-center"
+        className="flex animate-successIn flex-col items-center gap-4 rounded-sm border border-accent/30 bg-accent/5 p-10 text-center opacity-0"
       >
-        <CheckCircle2 aria-hidden="true" className="h-10 w-10 text-accent" />
+        <CheckCircle2
+          aria-hidden="true"
+          className="h-10 w-10 animate-successIconIn text-accent opacity-0"
+        />
         <h3 className="font-display text-2xl text-charcoal">
           Thank you — your request has been received.
         </h3>

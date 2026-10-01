@@ -51,11 +51,22 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(8px)" },
         },
+        successIn: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        successIconIn: {
+          "0%": { opacity: "0", transform: "scale(0.8)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
       },
       animation: {
         fadeUp: "fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         fadeIn: "fadeIn 1s ease forwards",
         bounceSlow: "bounceSlow 2.2s ease-in-out infinite",
+        successIn: "successIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        successIconIn:
+          "successIconIn 300ms cubic-bezier(0.16, 1, 0.3, 1) 70ms both",
       },
     },
   },
