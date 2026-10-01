@@ -8,15 +8,15 @@ export default function TestimonialCard({
   testimonial: Testimonial;
 }) {
   return (
-    <figure className="flex h-full flex-col overflow-hidden rounded-sm border border-stone-pale bg-white/60">
+    <figure className="group flex h-full flex-col overflow-hidden rounded-sm border border-stone-pale bg-white/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-charcoal/10">
       {testimonial.image && (
-        <div className="relative aspect-[16/10] w-full">
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
           <Image
             src={testimonial.image}
             alt={testimonial.imageAlt ?? ""}
             fill
             sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       )}

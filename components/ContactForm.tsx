@@ -59,6 +59,9 @@ function validate(values: FormState): FormErrors {
 const inputClasses =
   "w-full rounded-sm border bg-cream px-4 py-3 text-sm text-charcoal placeholder:text-stone-light focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors";
 
+const errorClasses =
+  "mt-1.5 flex animate-errorIn items-center gap-1 text-xs text-red-600 opacity-0";
+
 export default function ContactForm() {
   const [values, setValues] = useState<FormState>(INITIAL_STATE);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -150,7 +153,7 @@ export default function ContactForm() {
             placeholder="Jane Doe"
           />
           {errors.name && (
-            <p id="name-error" className="mt-1.5 flex items-center gap-1 text-xs text-red-600">
+            <p id="name-error" className={errorClasses}>
               <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {errors.name}
             </p>
           )}
@@ -173,7 +176,7 @@ export default function ContactForm() {
             placeholder="jane@example.com"
           />
           {errors.email && (
-            <p id="email-error" className="mt-1.5 flex items-center gap-1 text-xs text-red-600">
+            <p id="email-error" className={errorClasses}>
               <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {errors.email}
             </p>
           )}
@@ -198,7 +201,7 @@ export default function ContactForm() {
             placeholder="(000) 000-0000"
           />
           {errors.phone && (
-            <p id="phone-error" className="mt-1.5 flex items-center gap-1 text-xs text-red-600">
+            <p id="phone-error" className={errorClasses}>
               <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {errors.phone}
             </p>
           )}
@@ -225,7 +228,7 @@ export default function ContactForm() {
             ))}
           </select>
           {errors.projectType && (
-            <p id="projectType-error" className="mt-1.5 flex items-center gap-1 text-xs text-red-600">
+            <p id="projectType-error" className={errorClasses}>
               <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {errors.projectType}
             </p>
           )}
@@ -268,7 +271,7 @@ export default function ContactForm() {
           placeholder="Tell us about your project, timeline, and goals..."
         />
         {errors.message && (
-          <p id="message-error" className="mt-1.5 flex items-center gap-1 text-xs text-red-600">
+          <p id="message-error" className={errorClasses}>
             <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> {errors.message}
           </p>
         )}

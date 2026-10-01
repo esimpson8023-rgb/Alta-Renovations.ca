@@ -59,6 +59,10 @@ const config: Config = {
           "0%": { opacity: "0", transform: "scale(0.8)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
+        errorIn: {
+          "0%": { opacity: "0", transform: "translateY(-4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         fadeUp: "fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
@@ -67,6 +71,7 @@ const config: Config = {
         successIn: "successIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards",
         successIconIn:
           "successIconIn 300ms cubic-bezier(0.16, 1, 0.3, 1) 70ms both",
+        errorIn: "errorIn 180ms cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

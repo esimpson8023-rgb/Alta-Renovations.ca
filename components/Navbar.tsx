@@ -76,15 +76,22 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className={`inline-flex items-center justify-center rounded-sm p-2 transition-colors md:hidden ${
+            className={`relative flex h-10 w-10 items-center justify-center rounded-sm transition-colors md:hidden ${
               scrolled || menuOpen ? "text-charcoal" : "text-cream"
             }`}
           >
-            {menuOpen ? (
-              <X aria-hidden="true" className="h-6 w-6" />
-            ) : (
-              <Menu aria-hidden="true" className="h-6 w-6" />
-            )}
+            <Menu
+              aria-hidden="true"
+              className={`absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ${
+                menuOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+              }`}
+            />
+            <X
+              aria-hidden="true"
+              className={`absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ${
+                menuOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+              }`}
+            />
           </button>
         </nav>
       </Container>
