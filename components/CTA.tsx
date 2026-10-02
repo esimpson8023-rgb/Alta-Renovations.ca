@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./Container";
 import Reveal from "./Reveal";
 
@@ -24,9 +25,9 @@ export default function CTA() {
             Let&apos;s talk about your renovation project. Tell us what
             you&apos;re planning and we&apos;ll help you take the next step.
           </p>
-          <a href="#contact" className="btn-primary mt-2">
+          <Link href="/#contact" className="btn-primary mt-2">
             Request a Free Quote
-          </a>
+          </Link>
         </Reveal>
       </Container>
     </section>

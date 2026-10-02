@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { ServiceItem } from "@/lib/data";
 import PlaceholderImage from "./PlaceholderImage";
 
@@ -6,7 +8,10 @@ export default function ServiceCard({ service }: { service: ServiceItem }) {
   const Icon = service.icon;
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-sm border border-stone-pale bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-charcoal/10">
+    <Link
+      href={`/services/${service.slug}`}
+      className="group flex flex-col overflow-hidden rounded-sm border border-stone-pale bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-charcoal/10"
+    >
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         {service.image ? (
           <Image
@@ -32,7 +37,14 @@ export default function ServiceCard({ service }: { service: ServiceItem }) {
         <p className="text-sm leading-relaxed text-stone">
           {service.description}
         </p>
+        <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-accent-dark">
+          Learn More
+          <ArrowRight
+            aria-hidden="true"
+            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }

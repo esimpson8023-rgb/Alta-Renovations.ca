@@ -26,10 +26,16 @@ export const SOCIAL = {
   facebook: "https://facebook.com/altarenovations",
 };
 
+/**
+ * Homepage-relative anchors ("/#services" not "#services") so these work
+ * correctly from any page — a bare "#services" only works while already
+ * on the homepage; from a subpage like /services/kitchen-renovations it
+ * would silently do nothing.
+ */
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];

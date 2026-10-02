@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Container from "./Container";
 import { NAV_LINKS } from "@/lib/constants";
@@ -39,7 +40,7 @@ export default function Navbar() {
           aria-label="Primary"
           className="flex h-20 items-center justify-between"
         >
-          <a href="#home" className="flex items-center" aria-label="Alta Renovations — home">
+          <Link href="/#home" className="flex items-center" aria-label="Alta Renovations — home">
             <Image
               src="/images/logo.png"
               alt="Alta Renovations"
@@ -48,27 +49,27 @@ export default function Navbar() {
               priority
               className="h-12 w-auto rounded-sm sm:h-14"
             />
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-10 md:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-accent ${
                     scrolled ? "text-charcoal" : "text-cream"
                   }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
           <div className="hidden md:block">
-            <a href="#contact" className="btn-primary">
+            <Link href="/#contact" className="btn-primary">
               Get a Free Quote
-            </a>
+            </Link>
           </div>
 
           <button
@@ -105,23 +106,23 @@ export default function Navbar() {
           <ul className="flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={closeMenu}
                   className="block py-3 text-base font-medium uppercase tracking-wider text-charcoal transition-colors hover:text-accent"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="pt-3">
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={closeMenu}
                 className="btn-primary w-full"
               >
                 Get a Free Quote
-              </a>
+              </Link>
             </li>
           </ul>
         </Container>
