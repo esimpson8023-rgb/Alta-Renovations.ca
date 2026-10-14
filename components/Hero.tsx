@@ -52,7 +52,7 @@ export default function Hero() {
       <a
         href="#trust"
         aria-label="Scroll to explore more"
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounceSlow flex-col items-center gap-2 text-cream/70 transition-colors hover:text-cream sm:flex"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounceSlow flex-col items-center gap-2 text-cream/40 transition-colors hover:text-cream sm:flex"
       >
         <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
           Scroll
