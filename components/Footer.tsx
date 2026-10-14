@@ -16,7 +16,7 @@ export default function Footer() {
               alt="Alta Renovations"
               width={149}
               height={120}
-              className="h-20 w-auto"
+              className="h-24 w-auto"
             />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream/60">
               &ldquo;{SITE.tagline}&rdquo;

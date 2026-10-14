@@ -24,7 +24,7 @@ export default function Navbar() {
       <Container>
         <nav
           aria-label="Primary"
-          className="flex h-28 items-center justify-between"
+          className="flex h-32 items-center justify-between"
         >
           <Link href="/#home" className="flex items-center" aria-label="Alta Renovations — home">
             <Image
@@ -33,7 +33,7 @@ export default function Navbar() {
               width={149}
               height={120}
               priority
-              className="h-20 w-auto sm:h-24"
+              className="h-24 w-auto sm:h-28"
             />
           </Link>
 
