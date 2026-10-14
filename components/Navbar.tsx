@@ -8,15 +8,7 @@ import Container from "./Container";
 import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -28,13 +20,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen
-          ? "bg-cream/55 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 bg-transparent">
       <Container>
         <nav
           aria-label="Primary"
@@ -56,9 +42,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`text-sm font-medium uppercase tracking-wider transition-colors hover:text-accent ${
-                    scrolled ? "text-charcoal" : "text-cream"
-                  }`}
+                  className="text-sm font-medium uppercase tracking-wider text-cream transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
@@ -77,9 +61,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className={`relative flex h-10 w-10 items-center justify-center rounded-sm transition-colors md:hidden ${
-              scrolled || menuOpen ? "text-charcoal" : "text-cream"
-            }`}
+            className="relative flex h-10 w-10 items-center justify-center rounded-sm text-cream transition-colors md:hidden"
           >
             <Menu
               aria-hidden="true"
